@@ -22,12 +22,3 @@ position: absolute;
 width: 100%;
 top: 0;
 `
-
-export const Buttom = styled.button`
-display: flex;
-align-items: center;
-padding-top: 8px;
-& svg {
-    margin-right: 4px;
-}
-`

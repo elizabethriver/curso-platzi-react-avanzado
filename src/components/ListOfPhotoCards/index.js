@@ -1,24 +1,12 @@
 import React from 'react'
 // import { Category } from '../Category'
 import { PhotoCard } from '../PhotoCard'
-import { useQuery, gql } from '@apollo/client'
-// import { List, Item } from './style'
+import { useQuery } from '@apollo/client'
+import { withPhotos } from '../../hoc/withPhotos'
 
-const withPhotos = gql`
-query getPhotos ($categoryId: ID) {
-  photos (categoryId: $categoryId) {
-    id
-    categoryId
-    src
-    likes
-    userId
-    liked
-  }
-}
-`
-export const ListOfPhotoCards = () => {
-  const { loading, error, data } = useQuery(withPhotos)
-  console.log(data)
+export const ListOfPhotoCards = ({ categoryId }) => {
+  const { loading, error, data } = useQuery(withPhotos, { variables: { categoryId } })
+  // console.log(data)
   if (error) {
     return <h2>Internal Server Error</h2>
   }
