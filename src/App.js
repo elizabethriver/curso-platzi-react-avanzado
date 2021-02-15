@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import { Router } from '@reach/router'
 import { GlobalStyle } from './styles/GlobalStyles'
 
@@ -25,7 +25,7 @@ export const App = () => {
       <Logo />
       <Router>
         <Home path='/' />
-        <Home path='/pet:categoryId' />
+        <Home path='/pet/:categoryId' />
         <Detail path='/detail/:detailId' />
       </Router>
 
@@ -36,11 +36,11 @@ export const App = () => {
                 ? <Router>
                   <Favs path='/favs' />
                   <User path='/user' />
-                </Router>
+                  </Router>
                 : <Router>
                   <NotRegisteredUser path='/favs' />
                   <NotRegisteredUser path='/user' />
-                </Router>
+                  </Router>
           }
       </UserLogged>
       <NavBar />

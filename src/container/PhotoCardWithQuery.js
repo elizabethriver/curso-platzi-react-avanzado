@@ -6,10 +6,9 @@ import { Query } from '@apollo/client/react/components'
 const renderProp = ({ loading, error, data }) => {
   if (loading) return <p>Loading</p>
   if (error) return <p>Error!</p>
-  else {
-    const { photo = {} } = data
-    return <PhotoCard {...photo} />
-  }
+
+  const { photo = {} } = data
+  return <PhotoCard {...photo} />
 }
 
 export const PhotoCardsWithQuery = ({ id }) =>

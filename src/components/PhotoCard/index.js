@@ -10,12 +10,12 @@ const DEFAULT_IMAGE = 'https://images.unsplash.com/photo-1518791841217-8f162f1e1
 export const PhotoCard = ({ id, likes = 0, src = DEFAULT_IMAGE }) => {
   const [show, element] = useNearScreen()
   const key = `like-${id}`
-  const { mutation } = ToogleLikeMutation()
+  // const { mutation } = ToogleLikeMutation()
   const [liked, setLiked] = useLocalStorage(key, false)
-  const handleFavClick = () => {
-    !liked && mutation({ variables: { input: { id } } })
-    setLiked(!liked)
-  }
+  // const handleFavClick = () => {
+  //   !liked && mutation({ variables: { input: { id } } })
+  //   setLiked(!liked)
+  // }
   return (
 
     <Article ref={element}>
@@ -27,7 +27,20 @@ export const PhotoCard = ({ id, likes = 0, src = DEFAULT_IMAGE }) => {
                 <Img src={src} />
               </ImgWrapper>
             </Link>
-            <FavButton liked={liked} likes={likes} onClick={handleFavClick} />
+            <ToogleLikeMutation>
+              {
+                (togglelike) => {
+                  const handleFavClick = () => {
+                    !liked && togglelike({ variables: { input: { id } } })
+                    setLiked(!liked)
+                    // !liked && mutation({ variables: { input: { id } } })
+                    // setLiked(!liked)
+                  }
+                  return <FavButton liked={liked} likes={likes} onClick={handleFavClick} />
+                }
+              }
+            </ToogleLikeMutation>
+
           </>
       }
 

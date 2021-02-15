@@ -13,7 +13,9 @@ module.exports = {
   ],
   devServer: {
     open: true,
-    historyApiFallback: { disableDotRule: true }
+    historyApiFallback: {
+      disableDotRule: true
+    }
   },
   module: {
     rules: [
