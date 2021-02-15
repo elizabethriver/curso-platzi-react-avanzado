@@ -10,10 +10,10 @@ import { NavBar } from './components/NavBar'
 import { Favs } from './pages/Favs'
 import { NotRegisteredUser } from './pages/NotRegisterUser'
 import { User } from './pages/User'
-
-const UserLogged = ({ children }) => {
-  return children({ isAuth: true })
-}
+import Context from './Context'
+// const UserLogged = ({ children }) => {
+//   return children({ isAuth: true })
+// }
 export const App = () => {
   // const urlParams = new window.URLSearchParams(window.location.search)
   // const detailId = urlParams.get('detail')
@@ -29,7 +29,7 @@ export const App = () => {
         <Detail path='/detail/:detailId' />
       </Router>
 
-      <UserLogged>
+      <Context.Consumer>
         {
             ({ isAuth }) =>
               isAuth
@@ -42,7 +42,7 @@ export const App = () => {
                   <NotRegisteredUser path='/user' />
                   </Router>
           }
-      </UserLogged>
+      </Context.Consumer>
       <NavBar />
     </div>
 

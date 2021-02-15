@@ -1,6 +1,6 @@
 
 import React from 'react'
-import { gql, useMutation } from '@apollo/client'
+import { gql } from '@apollo/client'
 import { Mutation } from '@apollo/client/react/components'
 const LIKE_PHOTO = gql`
 mutation likeAnonymousPhoto(
