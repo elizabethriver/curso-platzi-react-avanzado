@@ -10,19 +10,7 @@ export const Input = styled.input`
   padding: 8px 4px;
   display: block;
   width: 100%;`
-export const Buttom = styled.button`
-  background: #8d00ff;
-  border-radius: 3px;
-  color: #fff;
-  height: 32px;
-  display: block;
-  width: 100%;
-  text-align: center;
-  &[disabled] {
-    opacity: .3;
-  }
-  
-  `
+
 export const Title = styled.h2`
   font-size: 16px;
   font-weight: 500;

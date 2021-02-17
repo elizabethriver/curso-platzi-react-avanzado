@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { App } from './App.js'
-import { ApolloClient, InMemoryCache, ApolloProvider, createHttpLink, from } from '@apollo/client'
+import { ApolloClient, InMemoryCache, ApolloProvider, createHttpLink } from '@apollo/client'
 import Context from './Context'
 import { setContext } from '@apollo/client/link/context'
 import { onError } from '@apollo/client/link/error'
