@@ -1,18 +1,24 @@
-import React, { useContext } from 'react'
+import React, { useContext, Suspense } from 'react'
 import { Router, Redirect } from '@reach/router'
 import { GlobalStyle } from './styles/GlobalStyles'
 
 import { Logo } from './components/Logo'
 // import { PhotoCardsWithQuery } from './container/PhotoCardWithQuery'
-import { Home } from './pages/Home'
-import { Detail } from './pages/Detail'
+// import { Home } from './pages/Home'
+// import { Detail } from './pages/Detail'
 import { NavBar } from './components/NavBar'
-import { Favs } from './pages/Favs'
-import { NotRegisteredUser } from './pages/NotRegisterUser'
-import { User } from './pages/User'
+// import { Favs } from './pages/Favs'
+// import { NotRegisteredUser } from './pages/NotRegisterUser'
+// import { User } from './pages/User'
 import { Context } from './Context'
-import { NotFound } from './pages/NotFound'
+// import { NotFound } from './pages/NotFound'
 
+const Favs = React.lazy(() => import('./pages/Favs'))
+const Home = React.lazy(() => import('./pages/Home'))
+const Detail = React.lazy(() => import('./pages/Detail'))
+const NotRegisteredUser = React.lazy(() => import('./pages/NotRegisterUser'))
+const User = React.lazy(() => import('./pages/User'))
+const NotFound = React.lazy(() => import('./pages/NotFound'))
 // const UserLogged = ({ children }) => {
 //   return children({ isAuth: true })
 // }
@@ -23,7 +29,7 @@ export const App = () => {
   // const Home = () => <Homerouter />
   const { isAuth } = useContext(Context)
   return (
-    <div>
+    <Suspense fallback={<div />}>
       <GlobalStyle />
       <Logo />
       <Router>
@@ -41,7 +47,7 @@ export const App = () => {
       </Router>
 
       <NavBar />
-    </div>
+    </Suspense>
 
   )
 }

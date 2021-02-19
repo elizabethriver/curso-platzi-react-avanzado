@@ -3,7 +3,7 @@ import { FavsWithQuery } from '../container/GetFavorites'
 
 import { Layaout } from '../components/Layout'
 
-export const Favs = () => (
+export default () => (
   <Layaout title='Your favorites' subtitle='with petgram find friends'>
     <FavsWithQuery />
   </Layaout>
