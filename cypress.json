@@ -1,0 +1,7 @@
+{
+    "baseUrl": "https://petgram.elizabethriver.vercel.app/",
+    "chromeWebSecurity": false,
+    "viewportWitdh": 500,
+    "viewporHeigh": 800
+
+}

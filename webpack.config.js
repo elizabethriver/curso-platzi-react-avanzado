@@ -2,7 +2,7 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const WebpackPwaManifestPlugin = require('webpack-pwa-manifest')
 const path = require('path')
-
+const WorkboxWebpackPlugin = require('workbox-webpack-plugin')
 module.exports = {
 
   output: {
@@ -10,6 +10,30 @@ module.exports = {
     publicPath: '/'
   },
   plugins: [
+    new WorkboxWebpackPlugin.GenerateSW({
+      swDest: 'service-worker.js',
+      clientsClaim: true,
+      skipWaiting: true,
+      maximumFileSizeToCacheInBytes: 5000000,
+      runtimeCaching: [
+        {
+          // eslint-disable-next-line prefer-regex-literals
+          urlPattern: new RegExp('https://(res.cloudinary.com|images.unsplash.com)'),
+          handler: 'CacheFirst',
+          options: {
+            cacheName: 'images'
+          }
+        },
+        {
+          // eslint-disable-next-line prefer-regex-literals
+          urlPattern: new RegExp('https://petgram-server-eli.elizabethriver.vercel.app'),
+          handler: 'NetworkFirst',
+          options: {
+            cacheName: 'api'
+          }
+        }
+      ]
+    }),
     new HtmlWebpackPlugin({
       template: './src/index.html'
     }),
