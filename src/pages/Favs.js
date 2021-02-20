@@ -4,7 +4,7 @@ import { FavsWithQuery } from '../container/GetFavorites'
 import { Layaout } from '../components/Layout'
 
 export default () => (
-  <Layaout title='Your favorites' subtitle='with petgram find friends'>
+  <Layaout title='Your favorites' subtitle='With petgram you can find friends'>
     <FavsWithQuery />
   </Layaout>
 

@@ -5,9 +5,19 @@ export const List = styled.ul`
     flex-direction: row;
     overflow: scroll;
     width: 100%;
-    /* &::-webkit-scrollbar{
-        display: none;
-    } */
+    margin-bottom: 33px;
+/* width */
+    &::-webkit-scrollbar {
+    width: 5px;
+    };
+    &::-webkit-scrollbar-thumb {
+    background: #8d00ff; 
+    border-radius: 3px;
+    };
+    &::-webkit-scrollbar-thumb:hover {
+    background:  #540199; 
+    };
+
     ${props => props.fixed && css`
     background: #fff;
         border-radius: 60 px;

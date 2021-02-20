@@ -7,6 +7,7 @@ export const Link = styled(LinkRouter)`
   text-align: center;
   text-decoration: none;
   width: 75px;
+  margin-bottom: 15px;
 `
 export const Image = styled.img`
   border: 1px solid #ddd;

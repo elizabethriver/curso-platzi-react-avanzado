@@ -5,7 +5,7 @@ import { Layaout } from '../components/Layout'
 
 const HomePage = ({ categoryId }) => {
   return (
-    <Layaout title='Petgram - App of photos of pets' subtitle='with petgram find friends'>
+    <Layaout title='Petgram - App of photos of pets' subtitle='With petgram you can find funny photos'>
 
       <ListOfCategory />
       <ListOfPhotoCards categoryId={categoryId} />
