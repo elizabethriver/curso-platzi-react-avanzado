@@ -7,7 +7,7 @@ import { setContext } from '@apollo/client/link/context'
 import { onError } from '@apollo/client/link/error'
 
 const httpLink = createHttpLink({
-  uri: 'https://petgram-server-eli.elizabethriver.vercel.app/graphql'
+  uri: 'https://api-zeta-mauve.vercel.app/graphql'
 })
 
 const authLink = setContext((_, { headers }) => {

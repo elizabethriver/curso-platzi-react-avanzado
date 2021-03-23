@@ -8,7 +8,7 @@ const useCategoriesData = () => {
   const [loading, setLoading] = useState(false)
   useEffect(() => {
     setLoading(true)
-    window.fetch('https://petgram-server-eli.elizabethriver.vercel.app/categories')
+    window.fetch('https://api-zeta-mauve.vercel.app/categories')
       .then((resp) => resp.json())
       .then((response) => {
         setCategories(response)

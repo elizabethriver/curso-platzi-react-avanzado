@@ -4,7 +4,7 @@ const WebpackPwaManifestPlugin = require('webpack-pwa-manifest')
 const path = require('path')
 const WorkboxWebpackPlugin = require('workbox-webpack-plugin')
 module.exports = {
-
+  mode: 'production',
   output: {
     filename: 'app.bundle.js',
     publicPath: '/'
